@@ -34,7 +34,7 @@ function upload(response, request) {
 
     /* Possible error on Windows systems:
        tried to rename to an already existing file */
-    fs.rename(files.upload.path, "/tmp/test.png", function(err) {
+    fs.rename(files.upload.filepath, "/tmp/test.png", function(err) {
       if (err) {
         fs.unlink("/tmp/test.png");
         fs.rename(files.upload.path, "/tmp/test.png");
